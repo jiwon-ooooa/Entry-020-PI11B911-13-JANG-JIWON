@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="より良い経験をBIMBLEと共に。">
+        <title>BIMBLE | 積み木</title>
+        <link rel="stylesheet" href="css/popupstyle.css">
+        <link rel="icon" href="image/icon.png" type="image/png">
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script src="js/popupscript.js" defer></script>
+    </head>
+    <body>
+        <div class="cursor"></div>
+        <div class="background">
+            <img src="image/toyroom02.jpg">
+        </div>
+        <div class="contactcontent">
+            <div class="content_wrapper">
+                <header class="header">
+                    <h1><a href="index.html"><img src="image/logo1.png" alt="index"></a></h1>
+                    <div class="header_menu">
+                        <ul>
+                            <li><a href="home.html">ホーム</a></li>
+                            <li><a href="toy.html">積み木</a></li>
+                            <li><a href="virtual.html">3D空間</a></li>
+                            <li class="menu-item onclick" onmouseover="showContent('contact')" onmouseout="hideContent('contact')" id="onclick data-en="contact" data-jp="FAQ"><a href="contact.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <nav class="header_nav">
+
+                        
+                        <form action="search.php" method="get">
+                            <input type="text" name="q" id="search-input">
+                            <button><img src="image/search.png"></button>
+                        </form>
+
+                        <a href="login.html"><img src="image/login2.png"></a>
+                        <a href="cart.html"><img src="image/cart.png"></a>
+
+                    </nav>
+                </header>
+
+
+                <div class="cart_contact">
+                    <h2>カートの中身</h2>
+                    <ul id="cart-items"></ul>
+                    <div class="cart-footer">
+                        <button id="clear-cart">カートを空にする</button>
+                        <button id="checkout">購入手続きへ</button>
+                    </div>
+                </div>
+                <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                    const cartList = document.getElementById("cart-items");
+                    const clearCartButton = document.getElementById("clear-cart");
+                    const checkoutButton = document.getElementById("checkout");
+                
+                    if (cart.length === 0) {
+                        cartList.innerHTML = "<li class='empty-cart'>カートは空です。</li>";
+                    } else {
+                        cart.forEach(item => {
+                            let li = document.createElement("li");
+                            li.classList.add("cart-item");
+                            li.innerHTML = `<span>${item.name}</span> <span class="price">¥${item.price}</span>`;
+                            cartList.appendChild(li);
+                        });
+                    }
+                
+                    clearCartButton.addEventListener("click", function () {
+                        localStorage.removeItem("cart");
+                        location.reload();
+                    });
+                
+                    checkoutButton.addEventListener("click", function () {
+                        alert("購入手続きへ進みます。"); // 실제 결제 페이지로 이동 설정 가능
+                    });
+                });
+                </script>
+
+
+            </div>
+            <footer class="footer">
+                <div class="footer_copyright">
+                    <small>Copyright &copy; 2025 BIMBLE. All rights reserved.</small>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

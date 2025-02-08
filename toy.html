@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="より良い経験をBIMBLEと共に。">
+        <title>BIMBLE | 積み木</title>
+        <link rel="stylesheet" href="css/popupstyle.css">
+        <link rel="icon" href="image/icon.png" type="image/png">
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script src="js/popupscript.js" defer></script>
+    </head>
+    <body>
+        <div class="cursor"></div>
+        <div class="background">
+            <img src="image/toyroom02.jpg">
+        </div>
+        <div class="toycontent">
+            <div class="concept_wrapper">
+                <header class="header">
+                    <h1><a href="index.html"><img src="image/logo1.png" alt="index"></a></h1>
+                    <div class="header_menu">
+                        <ul>
+                            <li><a href="home.html">ホーム</a></li>
+                            <li class="menu-item onclick" onmouseover="showContent('toy')" onmouseout="hideContent('toy')" id="onclick data-en="toy" data-jp="積み木"><a href="toy.html">積み木</a></li>
+                            <li><a href="virtual.html">3D空間</a></li>
+                            <li><a href="contact.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <nav class="header_nav">
+
+
+                        <form action="search.php" method="get">
+                            <input type="text" name="q" id="search-input">
+                            <button><img src="image/search.png"></button>
+                        </form>
+
+
+                        <a href="login.html"><img src="image/login2.png"></a>
+                        <a href="cart.html"><img src="image/cart.png"></a>
+                    </nav>
+                </header>
+                <div class="content_example">
+                    <h2 id="toggleButton">&#9654; 選べる楽しさ</h2>
+                    <div class="example_section" id="exampleContent">
+                        <section class="example">
+                            <img src="image/toyset02.png">
+                            <h3>木の美しさを活かしたシンプルなデザイン</h3>
+                        </section>
+                        <section class="example">
+                            <img src="image/toyset01.png">
+                            <h3>好きな色を選んで楽しくカスタマイズ</h3>
+                        </section>
+                        <section class="example">
+                            <img src="image/toyset03.png">
+                            <h3>多彩なパターンで広がる創造性</h3>
+                        </section>
+                    </div>
+                </div>
+                <div class="content_toy">
+                    <div class="imformation">
+                        <h2 class="h2">&#9654; カスタマイズ</h2>
+                        <h2 class="h3">お好みの色で、
+                        <br>積み木遊びの楽しさが
+                        <br>さらに広がります。
+                        <br>ぜひ、その魅力を
+                        <br>ご体験ください。</h2>
+                    </div>
+                    <section class="toy-model">
+                        <model-viewer id="model-viewer" src="model/modeling00.glb" alt="3D model 1" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+
+
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+
+
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling01.glb" alt="3D model 2" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling02.glb" alt="3D model 3" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling03.glb" alt="3D model 4" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling04.glb" alt="3D model 5" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling05.glb" alt="3D model 6" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling06.glb" alt="3D model 7" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling07.glb" alt="3D model 8" style="width: 235px; height: 180px;" camera-controls></model-viewer>                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling08.glb" alt="3D model 9" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling09.glb" alt="3D model 10" style="width: 235px; height: 180px;" camera-controls></model-viewer>                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling10.glb" alt="3D model 11" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling11.glb" alt="3D model 12" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling12.glb" alt="3D model 13" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling13.glb" alt="3D model 14" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling14.glb" alt="3D model 15" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="toy-model">
+                        <model-viewer src="model/modeling15.glb" alt="3D model 16" style="width: 235px; height: 180px;" camera-controls></model-viewer>
+                        <div class="color-picker">
+                            <input type="color" class="colorInput" value="#d32f2f" />
+                            <div class="buy">
+                                <label for="price">￥100</label>
+                                <button class="add-to-cart" data-id="1" data-name="積み木セットA" data-price="3000">カートに追加</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footer_copyright">
+                    <small>Copyright &copy; 2025 BIMBLE. All rights reserved.</small>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

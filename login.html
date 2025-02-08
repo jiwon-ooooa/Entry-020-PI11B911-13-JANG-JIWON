@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="より良い経験をBIMBLEと共に。">
+        <title>BIMBLE | 積み木</title>
+        <link rel="stylesheet" href="css/popupstyle.css">
+        <link rel="icon" href="image/icon.png" type="image/png">
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script src="js/popupscript.js" defer></script>
+    </head>
+    <body>
+        <div class="cursor"></div>
+        <div class="background">
+            <img src="image/toyroom02.jpg">
+        </div>
+        <div class="contactcontent">
+            <div class="content_wrapper">
+                <header class="header">
+                    <h1><a href="index.html"><img src="image/logo1.png" alt="index"></a></h1>
+                    <div class="header_menu">
+                        <ul>
+                            <li><a href="home.html">ホーム</a></li>
+                            <li><a href="toy.html">積み木</a></li>
+                            <li><a href="virtual.html">3D空間</a></li>
+                            <li class="menu-item onclick" onmouseover="showContent('contact')" onmouseout="hideContent('contact')" id="onclick data-en="contact" data-jp="FAQ"><a href="contact.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <nav class="header_nav">
+
+                        <form action="search.php" method="get">
+                            <input type="text" name="q" id="search-input">
+                            <button><img src="image/search.png"></button>
+                        </form>
+
+                        <a href="login.html"><img src="image/login2.png"></a>
+                        <a href="cart.html"><img src="image/cart.png"></a>
+                    </nav>
+                </header>
+
+
+                <div class="login_contact">
+                    <form action="login.php" method="post">
+                        <h2>ログイン</h2>
+                        <div class="input-group">
+                            <input type="text" name="username" placeholder="ユーザー名" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" name="password" placeholder="パスワード" required>
+                        </div>
+                        <button type="submit">ログイン</button>
+                    </form>
+                </div>
+
+
+            </div>
+            <footer class="footer">
+                <div class="footer_copyright">
+                    <small>Copyright &copy; 2025 BIMBLE. All rights reserved.</small>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

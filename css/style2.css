@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+*{ box-sizing: border-box; }
+
+/* ― 全体基本設定 ― */
+body{
+  font-family: "Hiragino Kaku Gothic Pro", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
+  margin: auto;
+  cursor: none;
+}
+.cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background-color: #00000055;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* ― eki ― */
+.background {
+  position: fixed;
+}
+.background img {
+  width: 100%;
+  opacity: 0.1;
+}
+
+/* ekiContent */
+.concept_wrapper {
+  position: relative;
+  max-width: 1470px;
+  margin: 0 auto;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px 0 11px 0;
+}
+.header h1 {
+  margin: 0;
+}
+.header a {
+  cursor: none;
+}
+.header img {
+  margin: 0 0 -8px 0;
+  width: 315px;
+  opacity: 0.8;
+}
+.header_menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  font-size: 26px;
+  font-weight: bold;
+}
+.header_menu li a {
+  text-decoration: none;
+  color: #93612c99;
+  cursor: none;
+}
+.header_menu li a:hover {
+  color: #59341bcd;
+}
+.header_menu .onclick a {
+  color: #1b4259cc;
+}
+
+.eki-model model-viewer {
+  width: 100%;
+  max-width: 1200px; /* 💡 화면 크기에 따라 유동 조정 */
+  height: 500px; /* 모델 높이 조절 */
+  display: block;
+  margin: auto; /* 💡 중앙 정렬 */
+}
+
+/* footer */
+.footer {
+  margin: 15px auto 0;
+}
+.footer_copyright {
+  color: rgba(0, 0, 0, 0.2);
+}
