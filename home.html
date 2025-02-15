@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="より良い経験をBIMBLEと共に。">
+        <title>BIMBLE | 積み木</title>
+        <link rel="stylesheet" href="css/popupstyle.css">
+        <link rel="icon" href="image/icon.png" type="image/png">
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <script src="js/popupscript.js" defer></script>
+    </head>
+    <body>
+        <div class="cursor"></div>
+        <div class="background">
+            <img src="image/toyroom02.jpg">
+        </div>
+        <div class="homecontent">
+            <div class="content_wrapper">
+                <header class="header">
+                    <h1><a href="index.html"><img src="image/logo1.png" alt="index"></a></h1>
+                    <div class="header_menu">
+                        <ul>
+                            <li class="menu-item onclick" onmouseover="showContent('home')" onmouseout="hideContent('home')" id="onclick data-en="home" data-jp="ホーム"><a href="home.html">ホーム</a></li>
+                            <li><a href="toy.html">積み木</a></li>
+                            <li><a href="virtual.html">3D空間</a></li>
+                            <li><a href="contact.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <nav class="header_nav">
+                        <form id="search-form">
+                            <input type="text" id="search-input">
+                            <button type="button" id="search-button">
+                                <img src="image/search.png" alt="検索">
+                            </button>
+                        </form>
+                        <a href="login.html"><img src="image/login2.png"></a>
+                        <a href="cart.html"><img src="image/cart.png"></a>
+                    </nav>
+                </header>
+                <div class="content_home">
+                    <div class="content_event">
+                        <h2 class="toggleButton"><span>&#11206;</span>ニュース / イベント情報</h2>
+                        <div class="event_section" id="eventContent">
+                            <section class="event_layout">
+                                <a href="https://ishikawanoki.ishikawa-moriren.jp/2024/08/07/%e3%80%8c%e6%9c%a8%e3%81%a8%e9%81%8a%e3%81%b3%e3%80%81%e6%9c%a8%e3%81%a7%e4%bd%9c%e3%81%a3%e3%81%a6%e3%80%81%e5%bf%83%e3%82%92%e8%82%b2%e3%81%a6%e3%82%8b%e3%80%8d%e3%83%af%e3%83%bc%e3%82%af%e3%82%b7/" target="_blank">
+                                    <img src="image/event01.png">
+                                    <h3 class="hidden_text">08月25日 終了</h3>
+                                    <div class="event_info">
+                                        <h3>いしかわの木<span>&#11111;</span></h3>
+                                    </div>
+                                </a>
+                            </section>
+                            <section class="event_layout">
+                                <a href="https://www.mizuho-ie.com/event/details_107.html" target="_blank">
+                                    <img src="image/event02.png">
+                                    <h3 class="hidden_text">09月23日 終了</h3>
+                                    <div class="event_info">
+                                        <h3>みづほ工房<span>&#11111;</span></h3>
+                                    </div>
+                                </a>
+                            </section>
+                            <section class="event_layout">
+                                <a href="https://www.jiwood.or.jp/machizukuri-contest" target="_blank">
+                                    <img src="image/event.png">
+                                    <h3 class="hidden_text">12月12日 終了</h3>
+                                    <div class="event_info">
+                                        <h3>石川県木造住宅協会<span>&#11111;</span></h3>
+                                    </div>
+                                </a>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="content_example">
+                        <h2><span>&#11208;</span>選べる楽しさ</h2>
+                        <div class="example_section">
+                            <section class="example">
+                                <img src="image/toyset02.png">
+                                <h3>木の美しさを活かした<br><span>シンプルなデザイン</span></h3>
+                            </section>
+                            <section class="example2">
+                                <img src="image/toyset.png">
+                                <h3>多彩なパターンで広がる<br><span>創造性</span></h3>
+                            </section>
+                            <section class="example3">
+                                <img src="image/toyset01.png">
+                                <h3>好きな色を選んで楽しく<br><span>カスタマイズ</span></h3>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footer_copyright">
+                    <small>Copyright &copy; 2025 BIMBLE. All rights reserved.</small>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

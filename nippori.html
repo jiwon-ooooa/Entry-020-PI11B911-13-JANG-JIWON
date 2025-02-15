@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="新しい経験をBIMBLEと共に。">
+        <link rel="icon" href="image/icon.png" type="image/png">
+        <title>BIMBLE | らくらく駅デグチ</title>
+        <link rel="stylesheet" href="css/style2.css">
+        <script src="js/script.js" defer></script>
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    </head>
+    <body>
+        <div class="cursor"></div>
+        <div class="background">
+            <img src="image/densya.jpg">
+        </div>
+        <div class="virtualcontent">
+            <div class="concept_wrapper">
+                <header class="header">
+                    <h1><a href="eki.html"><img src="image/eki_logo01.png" alt="index"></a></h1>
+                </header>
+                <div class="eki_info">
+                    <section class="eki_menu">
+                            <h2>日暮里・舎人ライナー　日暮里駅</h2>
+                            <p>住所 : 荒川区 西日暮里2-19-2</p>
+                            <p>乗換え : JR山手線、JR京浜東北線、JR常磐快速線、京成線</p>
+                            <p><a href="https://www.kotsu.metro.tokyo.jp/other/kanren/stores/nippori.html" target="_blank">店舗・ロッカー・ATM等<span class="tab">&#8599;</span></a></p>
+                    </section>
+                    <section class="eki-model">
+                        <model-viewer src="model/nippori.glb" alt="3D model" auto-rotate camera-controls environment-image="neutral" shadow-intensity="1" exposure="1.2" field-of-view="50deg"></model-viewer>
+                    </section>
+                </div>
+                <footer class="footer">
+                    <h1><a href="index.html"><img src="image/logo1.png" alt="index"></a></h1>
+                    <div class="footer_copyright">
+                        <small>Copyright &copy; 2025 BIMBLE. All rights reserved.</small>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
