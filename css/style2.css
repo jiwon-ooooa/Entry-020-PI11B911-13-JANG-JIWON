@@ -37,10 +37,9 @@ body{
 
 /* header */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 20px 0 11px 0;
+  position: relative;
+  padding-top: 23px;
+  margin: 0;
 }
 .header h1 {
   margin: 0;
@@ -49,42 +48,81 @@ body{
   cursor: none;
 }
 .header img {
-  margin: 0 0 -8px 0;
-  width: 315px;
+  width: 380px;
   opacity: 0.8;
 }
-.header_menu ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  font-size: 26px;
-  font-weight: bold;
-}
-.header_menu li a {
-  text-decoration: none;
-  color: #93612c99;
-  cursor: none;
-}
-.header_menu li a:hover {
-  color: #59341bcd;
-}
-.header_menu .onclick a {
-  color: #1b4259cc;
+.header img:hover {
+  opacity: 0.95;
 }
 
+.eki_info {
+  display: flex;
+  justify-content: space-between;
+}
+.eki_menu {
+  position: absolute;
+  padding: 370px 0 0 110px;
+}
+.eki_menu h2 {
+  color: #165390;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+}
+.eki_menu a {
+  color: #168090;
+  text-decoration: none;
+  cursor: none;
+}
+.eki_menu a:hover {
+  color: #13406d;
+  cursor: none;
+}
+.eki_menu .tab {
+  display: inline-block;
+  margin: -3.5px 6px 0;
+  padding: 0 3px;
+  background-color: #0f3860;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.eki-model {
+  flex: 1;
+  padding-left: 420px;
+  margin: -77px 20px 0 0;
+}
 .eki-model model-viewer {
-  width: 100%;
-  max-width: 1200px; /* 💡 화면 크기에 따라 유동 조정 */
-  height: 500px; /* 모델 높이 조절 */
   display: block;
-  margin: auto; /* 💡 중앙 정렬 */
+  margin: auto;
+  width: 100%;
+  max-width: 1250px;
+  height: 627px;
 }
 
 /* footer */
 .footer {
-  margin: 15px auto 0;
+  margin: -5px -15px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.footer h1 {
+  margin: 0;
+}
+.footer a {
+  cursor: none;
+}
+.footer img {
+  width: 80px;
+  opacity: 0.65;
+}
+.footer img:hover {
+  opacity: 0.9;
 }
 .footer_copyright {
-  color: rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: -10px 0 0;
 }

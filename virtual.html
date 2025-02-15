@@ -28,20 +28,18 @@
                         </ul>
                     </div>
                     <nav class="header_nav">
-
-
-                        <form action="search.php" method="get">
-                            <input type="text" name="q" id="search-input" placeholder="検索...">
-                            <button type="submit"><img src="image/search.png" alt="検索"></button>
+                        <form id="search-form">
+                            <input type="text" id="search-input">
+                            <button type="button" id="search-button">
+                                <img src="image/search.png" alt="検索">
+                            </button>
                         </form>
-
-                        
                         <a href="login.html"><img src="image/login2.png"></a>
                         <a href="cart.html"><img src="image/cart.png"></a>
                     </nav>
                 </header>
                 <div class="content_virtual">
-                    <h2>お気に入りのブロックを<span>ダブルクリック</span>し、積み木遊びを楽しんでください。</h2>
+                    <h2>お気に入りのブロックを <span>ダブルクリック</span> し、積み木遊びを楽しんでください。</h2>
                     <div id="play-area">
                         <model-viewer id="viewer" src="" alt="3D Scene" style="width: 100%; height: 100%;"></model-viewer>
                     </div>
@@ -62,9 +60,18 @@
                         <model-viewer src="model/modeling13.glb" auto-rotate ondblclick="addBlock(this.src)"></model-viewer>
                         <model-viewer src="model/modeling14.glb" auto-rotate ondblclick="addBlock(this.src)"></model-viewer>
                         <model-viewer src="model/modeling15.glb" auto-rotate ondblclick="addBlock(this.src)"></model-viewer>
+
+
+                        <model-viewer src="model/modeling16.glb" auto-rotate ondblclick="addBlock(this.src)"></model-viewer>
+                        <model-viewer src="model/modeling17.glb" auto-rotate ondblclick="addBlock(this.src)"></model-viewer>
+                        <model-viewer src="model/modeling18.glb" auto-rotate ondblclick="addBlock(this.src)"></model-viewer>
+                        <model-viewer src="model/modeling19.glb" auto-rotate ondblclick="addBlock(this.src)"></model-viewer>
+
                     </div>
                     <div class="play-control">
-                        <button>やり直し</button>
+                        <button id="rotate-left"><span>&#11170;</span> 左回転</button>
+                        <button class="replay" id="replay">やり直し</button>
+                        <button id="rotate-right">右回転 <span>&#11171;</span></button>
                     </div>
                 </div>
             </div>

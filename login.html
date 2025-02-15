@@ -24,21 +24,20 @@
                             <li><a href="home.html">ホーム</a></li>
                             <li><a href="toy.html">積み木</a></li>
                             <li><a href="virtual.html">3D空間</a></li>
-                            <li class="menu-item onclick" onmouseover="showContent('contact')" onmouseout="hideContent('contact')" id="onclick data-en="contact" data-jp="FAQ"><a href="contact.html">FAQ</a></li>
+                            <li><a href="contact.html">FAQ</a></li>
                         </ul>
                     </div>
                     <nav class="header_nav">
-
-                        <form action="search.php" method="get">
-                            <input type="text" name="q" id="search-input">
-                            <button><img src="image/search.png"></button>
+                        <form id="search-form">
+                            <input type="text" id="search-input">
+                            <button type="button" id="search-button">
+                                <img src="image/search.png" alt="検索">
+                            </button>
                         </form>
-
-                        <a href="login.html"><img src="image/login2.png"></a>
+                        <a href="login.html" class="menu-item onclick"><img src="image/login2.png"></a>
                         <a href="cart.html"><img src="image/cart.png"></a>
                     </nav>
                 </header>
-
 
                 <div class="login_contact">
                     <form action="login.php" method="post">
@@ -49,11 +48,13 @@
                         <div class="input-group">
                             <input type="password" name="password" placeholder="パスワード" required>
                         </div>
-                        <button type="submit">ログイン</button>
+                        <div class="input_id">
+                            <button id="make-id">新規登録</button>
+                            <button id="login-id">ログイン</button>
+                        </div>
                     </form>
                 </div>
-
-
+                
             </div>
             <footer class="footer">
                 <div class="footer_copyright">

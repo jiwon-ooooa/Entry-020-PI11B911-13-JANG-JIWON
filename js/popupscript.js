@@ -15,14 +15,35 @@ document.addEventListener("scroll", () => {
     }
 });
 
-
 // 커서 요소 가져오기
 const cursor = document.querySelector('.cursor');
+
 // 마우스 이동 이벤트
 document.addEventListener('mousemove', (event) => {
-    // 커서를 마우스 위치에 따라 이동
-    cursor.style.left = `${event.pageX}px`;
-    cursor.style.top = `${event.pageY}px`;
+    // clientX, clientY를 사용하여 커서를 마우스 위치에 따라 이동
+    cursor.style.left = `${event.clientX}px`;
+    cursor.style.top = `${event.clientY}px`;
+});
+
+/* - ec - */
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.getElementById("search-button");
+
+    searchButton.addEventListener("click", function () {
+        const searchTerm = searchInput.value.toLowerCase(); // 검색어 소문자로 변환
+        const items = document.querySelectorAll(".search-item"); // 페이지 내의 검색 항목들 (예시로 'search-item' 클래스가 붙은 요소들)
+
+        items.forEach(item => {
+            const itemText = item.textContent.toLowerCase(); // 항목의 텍스트를 소문자로 변환
+
+            if (itemText.includes(searchTerm)) {
+                item.style.display = ""; // 검색어가 포함되면 표시
+            } else {
+                item.style.display = "none"; // 포함되지 않으면 숨김
+            }
+        });
+    });
 });
 
 
@@ -30,12 +51,22 @@ document.addEventListener('mousemove', (event) => {
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.querySelector(".toggleButton");
     const eventContent = document.getElementById("eventContent");
+    const arrowIcon = toggleButton.querySelector("span"); // 아이콘 변경을 위한 요소
+
+    // 처음에는 내용 숨김
+    eventContent.style.maxHeight = "0";
+    eventContent.style.overflow = "hidden";
+    eventContent.style.opacity = "0";
 
     toggleButton.addEventListener("click", function () {
-        if (eventContent.style.display === "none" || eventContent.style.display === "") {
-            eventContent.style.display = "flex"; // ✅ 숨김 해제 시 flex 적용
+        if (eventContent.style.maxHeight === "0px" || eventContent.style.maxHeight === "") {
+            eventContent.style.maxHeight = eventContent.scrollHeight + "px"; // 실제 높이만큼 열기
+            eventContent.style.opacity = "1"; // 투명도 조정
+            arrowIcon.innerHTML = "&#11208;"; // ▼ 아래 방향 화살표로 변경
         } else {
-            eventContent.style.display = "none"; // ✅ 다시 숨김
+            eventContent.style.maxHeight = "0";
+            eventContent.style.opacity = "0"; // 다시 숨김
+            arrowIcon.innerHTML = "&#11206;"; // ▶ 오른쪽 화살표로 변경
         }
     });
 });
@@ -87,8 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const cartButton = document.querySelectorAll(".add-to-cart");
 
@@ -98,12 +127,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const modelViewer = toyModel.querySelector("model-viewer");
             const colorInput = toyModel.querySelector(".colorInput");
 
+            // 색상에 맞는 모델 색상 변경 (재질 속성 적용)
+            const color = colorInput.value;
+
             // 상품 정보 가져오기
             const item = {
                 modelSrc: modelViewer.getAttribute("src"),
-                alt: modelViewer.getAttribute("alt"),
-                price: "￥100",
-                color: colorInput.value
+                price: "￥100", // 가격
+                color: color, // 선택된 색상 저장
             };
 
             // 기존 장바구니 데이터 가져오기
@@ -113,7 +144,21 @@ document.addEventListener("DOMContentLoaded", function () {
             cart.push(item);
             localStorage.setItem("cart", JSON.stringify(cart));
 
-            alert(`${item.alt} がカートに追加されました！`);
+            // 1. 메시지 박스와 텍스트 요소 가져오기
+            const alertBox = document.getElementById("custom-alert");
+            const alertMessage = document.getElementById("alert-message");
+
+            // 2. 메시지 텍스트 설정
+            alertMessage.textContent = `カートに追加されました！`;
+
+            // 3. 커스터마이즈된 알림 표시
+            alertBox.classList.add("show");
+
+            // 4. 알림 숨기기
+            setTimeout(function () {
+                alertBox.classList.remove("show");
+                alertBox.classList.add("hide");
+            }, 1000);
         });
     });
 });
@@ -132,20 +177,19 @@ function addBlock(modelPath) {
     newBlock.setAttribute("alt", "3D Block");
 
     newBlock.style.position = "absolute";
-    newBlock.style.width = "100px";
-    newBlock.style.height = "100px";
+    newBlock.style.width = "120px";
+    newBlock.style.height = "120px";
     newBlock.style.transformOrigin = "center";
-    newBlock.style.zIndex = "10";
 
+    // 자연스러운 전환 효과 (여기서 1초 동안 애니메이션)
+    newBlock.style.transition = "transform 0.4s ease";
+    
     // 📌 랜덤 위치 설정
     let viewerRect = viewer.getBoundingClientRect();
     let maxX = viewerRect.width - 100;
     let maxY = viewerRect.height - 100;
     let randomX = Math.random() * maxX;
     let randomY = Math.random() * maxY;
-
-    newBlock.style.left = `${randomX}px`;
-    newBlock.style.top = `${randomY}px`;
 
     // 📌 블럭 이동 기능 (마우스로 클릭 후 드래그)
     newBlock.addEventListener("mousedown", (event) => {
@@ -155,12 +199,10 @@ function addBlock(modelPath) {
     });
 
     document.addEventListener("mousemove", (event) => {
-        if (!selectedBlock || !isDragging) return;
-
+        if (!selectedBlock || !isDragging) return;  
         let rect = viewer.getBoundingClientRect();
         let newX = event.clientX - rect.left - 50;
         let newY = event.clientY - rect.top - 50;
-
         selectedBlock.style.left = `${newX}px`;
         selectedBlock.style.top = `${newY}px`;
     });
@@ -174,11 +216,9 @@ function addBlock(modelPath) {
     // 📌 휠로 크기 조절 (최소 50px ~ 최대 1000px)
     newBlock.addEventListener("wheel", (event) => {
         event.preventDefault();
-
         let currentSize = parseFloat(newBlock.style.width);
         let newSize = currentSize + event.deltaY * -0.5;
         newSize = Math.min(Math.max(newSize, 50), 1000);
-
         newBlock.style.width = `${newSize}px`;
         newBlock.style.height = `${newSize}px`;
     });
@@ -199,65 +239,28 @@ function addBlock(modelPath) {
 }
 
 // 📌 `やり直し` 버튼 → 모든 블럭 삭제
-document.querySelector(".play-control button:nth-child(1)").addEventListener("click", () => {
-    blocks.forEach(block => block.remove());
-    blocks = [];
+document.querySelector(".replay").addEventListener("click", () => {
+    blocks.forEach(block => block.remove()); // 모든 블록 제거
+    blocks = []; // 배열 초기화
+});
+
+// 📌 좌우 반전 (미러 효과) 기능
+// "rotate-left" 버튼: 반전 적용 (scaleX(-1))
+document.getElementById("rotate-left").addEventListener("click", () => {
+    let block = selectedBlock || (blocks.length > 0 ? blocks[blocks.length - 1] : null);
+    if (!block) return;
+    block.dataset.flipped = "true";
+    block.style.transform = "scaleX(-1)";
+});
+
+// "rotate-right" 버튼: 반전 해제 (scaleX(1))
+document.getElementById("rotate-right").addEventListener("click", () => {
+    let block = selectedBlock || (blocks.length > 0 ? blocks[blocks.length - 1] : null);
+    if (!block) return;
+    block.dataset.flipped = "false";
+    block.style.transform = "scaleX(1)";
 });
 
 
+/* - contact - */
 
-/* - cart - */
-document.addEventListener("DOMContentLoaded", function () {
-    const cartContainer = document.getElementById("cart-container");
-    const clearCartButton = document.getElementById("clear-cart");
-
-    function loadCart() {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        console.log("장바구니 데이터:", cart); // 콘솔에서 데이터 확인
-
-        cartContainer.innerHTML = "";
-
-        if (cart.length === 0) {
-            cartContainer.innerHTML = "<p>カートに商品がありません。</p>";
-            return;
-        }
-
-        cart.forEach((item, index) => {
-            const itemElement = document.createElement("div");
-            itemElement.classList.add("cart-item");
-
-            itemElement.innerHTML = `
-                <div>
-                    <model-viewer src="${item.modelSrc}" alt="${item.alt}" style="width: 100px; height: 100px;" camera-controls></model-viewer>
-                    <p>${item.alt}</p>
-                    <p>${item.price}</p>
-                    <div style="background: ${item.color}; width: 50px; height: 20px;"></div>
-                    <button class="remove-item" data-index="${index}">削除</button>
-                </div>
-            `;
-
-            cartContainer.appendChild(itemElement);
-        });
-
-        document.querySelectorAll(".remove-item").forEach(button => {
-            button.addEventListener("click", function () {
-                const index = this.dataset.index;
-                removeFromCart(index);
-            });
-        });
-    }
-
-    function removeFromCart(index) {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart.splice(index, 1);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        loadCart();
-    }
-
-    clearCartButton.addEventListener("click", function () {
-        localStorage.removeItem("cart");
-        loadCart();
-    });
-
-    loadCart();
-});

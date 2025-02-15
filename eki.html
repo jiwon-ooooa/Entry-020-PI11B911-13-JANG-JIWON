@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="より良い経験をBIMBLEと共に。">
+        <meta name="description" content="新しい経験をBIMBLEと共に。">
+        <link rel="icon" href="image/icon.png" type="image/png">
         <title>BIMBLE | らくらく駅デグチ</title>
         <link rel="stylesheet" href="css/style1.css">
-        <link rel="icon" href="image/icon.png" type="image/png">
-        <script src="js/script1.js"></script>
+        <script src="js/script1.js" defer></script>
     </head>
     <body>
         <div class="cursor"></div>
@@ -20,13 +20,11 @@
                     <h1><img src="image/eki_logo01.png"></h1>
                     <h2>各駅情報が確認できます。</h2>
                 </header>
-                <div id="eki" class="station">
+                <div class="station">
                     <section class="station-group first-station">
                         <div class="station-circle">
-                            <a href="nippori.html">
-                            <span class="default-text">NT-01</span>
-                            <span class="hover-text">日暮里</span>
-                            </a>
+                            <span class="default-text" id="aa">NT-01</span>
+                            <span class="hover-text" id="aa"><a href="nippori.html">日暮里</a></span>
                         </div>
                     </section>
                     <section class="station-group">
@@ -102,13 +100,13 @@
                         </div>
                     </section>
                 </div>
+                <footer class="footer">
+                    <h1><a href="index.html"><img src="image/logo1.png" alt="index"></a></h1>
+                    <div class="footer_copyright">
+                        <small>Copyright &copy; 2025 BIMBLE. All rights reserved.</small>
+                    </div>
+                </footer>
             </div>
-            <footer class="footer">
-                <h1><a href="index.html"><img src="image/logo.png" alt="index"></a></h1>
-                <div class="footer_copyright">
-                    <small>Copyright &copy; 2025 BIMBLE. All rights reserved.</small>
-                </div>
-            </footer>
         </div>
     </body>
 </html>
