@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+*{ box-sizing: border-box; }
+
+/* ― 全体基本設定 ― */
+body{
+  font-family: "Hiragino Kaku Gothic Pro", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
+  margin: auto;
+  cursor: none;
+  overflow-x: hidden;
+}
+.cursor {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background-color: #00000055;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+/* ― index ― */
+.entrancemain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.entrance_background {
+  width: 100%;
+  height: 100vh;
+}
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+.entrance_logo {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.entrance_logo h1 {
+  margin: 0;
+}
+.entrance_logo img {
+  width: 1150px;
+  opacity: 0.9;
+}
+
+.Scroll {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 6px;
+  color: #ffffff66;
+}
+.Scroll h6 {
+  margin: 0;
+  font-size: 16px;
+}
+.Scroll p {
+  margin: 0;
+}
+.Scroll img{
+  width: 21px;
+  opacity: 0.25;
+}
+
+.entrancehidden {
+  position: fixed;
+  display: flex;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+}
+.entrancehidden.active {
+  visibility: visible;
+}
+.split_left {
+  border-right: 0.05px solid rgb(78, 72, 68);
+  background-image: url('../image/train01.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.split_right {
+  border-left: 0.05px solid #79715f;
+  background-image: url('../image/toyroom02.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.split_left,
+.split_right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  transition: flex 0.8s ease 0.2s;
+}
+.split_left:hover,
+.split_right:hover {
+  flex: 1.05;
+}
+.split_left h2,
+.split_right h2 {
+  font-size: 77px;
+  margin: 0;
+  text-shadow: 1px 2px 8px rgb(0, 0, 0, 0.7);
+}
+.split_left a, .split_right a {
+  text-decoration: none;
+  color: #ffffff;
+  cursor: none;
+}
+.split_left:hover a {
+  color: #edd058;
+}
+.split_right:hover a {
+  color: #e79353;
+}
+.split_left p,
+.split_right p {
+  font-size: 23px;
+  color: #ffffff66;
+  margin: 16px 0;
+}
+.split_left:hover p,
+.split_right:hover p {
+  color: #ffffffee;
+}
